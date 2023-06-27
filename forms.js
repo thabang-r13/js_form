@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function add_cert_field() {
         const field = document.createElement('div');
         field.innerHTML = `
+        <div class="new-input-fields">
             <label for="certification-${fieldCounter}">Certification:</label>
             <select id="certification-${fieldCounter}">
                 <option value="associates">Associate's Degree</option>
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <option value="masters">Master's Degree</option>
                 <option value="phd">PhD</option>
             </select>
+        </div>
         `;
         certificationContainer.appendChild(field);
     }
@@ -27,8 +29,10 @@ document.addEventListener('DOMContentLoaded', function () {
     function add_year_field() {
         const field = document.createElement('div');
         field.innerHTML = `
+        <div class="new-input-fields">
             <label for="year-${fieldCounter}">Year:</label>
             <input type="number" id="year-${fieldCounter}" min="1" placeholder="Select the year" required>
+        </div>
         `;
         yearContainer.appendChild(field);
     }
@@ -36,8 +40,10 @@ document.addEventListener('DOMContentLoaded', function () {
     function add_course_field() {
         const field = document.createElement('div');
         field.innerHTML = `
+        <div class="new-input-fields">
             <label for="course-${fieldCounter}">Course:</label>
             <input type="text" id="course-${fieldCounter}" placeholder="Enter your course" required>
+        </div>
         `;
         courseContainer.appendChild(field);
     }

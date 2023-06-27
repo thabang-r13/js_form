@@ -33,7 +33,15 @@ body{
     display: flex;
     width: 25vh;
     flex-direction: column;
-    margin: 15px 0;
+    margin: 5px 0;
+    position: relative;
+}
+
+.new-input-fields{
+    display: flex;
+    width: 25vh;
+    flex-direction: column;
+    margin: 10px 0;
     position: relative;
 }
 
