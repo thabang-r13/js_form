@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const field = document.createElement('div');
         field.innerHTML = `
             <label for="certification-${fieldCounter}">Certification:</label>
-            <select id="certification-${fieldCounter}" class="dynamic-field">
+            <select id="certification-${fieldCounter}">
                 <option value="associates">Associate's Degree</option>
                 <option value="bachelors">Bachelor's Degree</option>
                 <option value="masters">Master's Degree</option>
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const field = document.createElement('div');
         field.innerHTML = `
             <label for="year-${fieldCounter}">Year:</label>
-            <input type="number" id="year-${fieldCounter}" min="1" placeholder="Select the year" required class="dynamic-field">
+            <input type="number" id="year-${fieldCounter}" min="1" placeholder="Select the year" required>
         `;
         yearContainer.appendChild(field);
     }
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const field = document.createElement('div');
         field.innerHTML = `
             <label for="course-${fieldCounter}">Course:</label>
-            <input type="text" id="course-${fieldCounter}" placeholder="Enter your course" required class="dynamic-field">
+            <input type="text" id="course-${fieldCounter}" placeholder="Enter your course" required>
         `;
         courseContainer.appendChild(field);
     }
