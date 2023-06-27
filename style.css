@@ -33,7 +33,14 @@ body{
     display: flex;
     width: 25vh;
     flex-direction: column;
-    margin: 5px 0;
+    margin: 10px 0;
+    position: relative;
+}
+
+.low-input-fields{
+    display: flex;
+    width: 25vh;
+    flex-direction: column;
     position: relative;
 }
 
