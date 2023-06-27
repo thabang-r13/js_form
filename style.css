@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container{
+    position: relative;
+    max-width: 575px;
+    width: 100%;
+}
+
+.form-section-header{
+    font-size: larger;
+    font-weight: bold;
+}
+
+.form-fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.input-fields{
+    display: flex;
+    width: 25vh;
+    flex-direction: column;
+    margin: 15px 0;
+    position: relative;
+}
+
+input{
+    height: 25px;
+    margin: 5px 0;
+    width: 29vh;
+}
+
+input[type='date']{
+    color: gray;
+}
+
+select{
+    height: 31px;
+    margin: 5px 0;
+    width: 29vh;
+}
+
+.error-message {
+    color: red;
+    font-size: small;
+    position: absolute;
+    top: 100%;
+}
+
+.dynamic-field {
+    margin: 15px, 0;
+}
