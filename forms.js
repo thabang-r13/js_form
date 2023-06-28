@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const courseContainer = document.getElementById('course-container');
     const addFieldButton = document.getElementById('add-field-button');
 
-    // Generate unique IDs for the added fields
+    //unique id's for the added fields
     let fieldCounter = 1;
 
     function add_cert_field() {
@@ -48,20 +48,20 @@ document.addEventListener('DOMContentLoaded', function () {
         courseContainer.appendChild(field);
     }
 
-    // Attach blur event listener to a specific input field
+    //creating a blur event listener for input fields
     function attachBlurEventListener(input) {
         input.addEventListener('blur', function () {
             validateInput(this);
         });
     }
 
-    // Event listener for adding new fields
+    //event listener for adding new fields
     addFieldButton.addEventListener('click', function () {
         add_cert_field();
         add_year_field();
         add_course_field();
 
-        // Attach blur event listener to newly added input fields
+        //blur event listener for newly added input fields
         const newCertificationField = document.getElementById(`certification-${fieldCounter}`);
         const newYearField = document.getElementById(`year-${fieldCounter}`);
         const newCourseField = document.getElementById(`course-${fieldCounter}`);
@@ -73,13 +73,13 @@ document.addEventListener('DOMContentLoaded', function () {
         fieldCounter++;
     });
 
-    // Attach blur event listener to initial input fields
+    //blur event listener for input andselect fields
     const inputFields = document.querySelectorAll('input[required], select[required]');
     inputFields.forEach(function (input) {
         attachBlurEventListener(input);
     });
 
-    // Validate input fields
+    //live validation of input fields
     function validateInput(input) {
         if (input.value.trim() === '') {
             input.classList.add('error');
