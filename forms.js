@@ -114,23 +114,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function validateEmail() {
       const email = emailInput.value;
-
-      const existingErrorMessage = document.getElementById('error-message');
-      if (existingErrorMessage) {
-        existingErrorMessage.remove();
+      const requiredErrorMessage = emailInput.parentNode.querySelector('.error-message');
+    
+      if (requiredErrorMessage) {
+        requiredErrorMessage.remove();
       }
-
+    
       if (email === '') {
         return;
       }
-
+    
       if (!isValidEmail(email)) {
-        const errorMessage = document.createElement('div');
-        errorMessage.id = 'error-message';
-        errorMessage.className = 'error';
-        errorMessage.textContent = 'Invalid email address';
-
-        emailInput.insertAdjacentElement('afterend', errorMessage);
+        showErrorMessage(emailInput, 'Invalid email address');
+      } else {
+        hideErrorMessage(emailInput);
       }
     }
 
@@ -146,23 +143,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function validatePhoneNumber() {
       const phoneNumber = phoneInput.value;
-
-      const existingErrorMessage = document.getElementById('error-message');
-      if (existingErrorMessage) {
-        existingErrorMessage.remove();
+      const requiredErrorMessage = phoneInput.parentNode.querySelector('.error-message');
+    
+      if (requiredErrorMessage) {
+        requiredErrorMessage.remove();
       }
-
+    
       if (phoneNumber === '') {
         return;
       }
-
+    
       if (!isValidPhoneNumber(phoneNumber)) {
-        const errorMessage = document.createElement('div');
-        errorMessage.id = 'error-message';
-        errorMessage.className = 'error';
-        errorMessage.textContent = 'Invalid phone number';
-
-        phoneInput.insertAdjacentElement('afterend', errorMessage);
+        showErrorMessage(phoneInput, 'Invalid phone number');
+      } else {
+        hideErrorMessage(phoneInput);
       }
     }
 
