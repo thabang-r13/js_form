@@ -106,4 +106,68 @@ document.addEventListener('DOMContentLoaded', function () {
             errorContainer.parentNode.removeChild(errorContainer);
         }
     }
+    
+    //live email validation
+    const emailInput = document.getElementById('email');
+
+    emailInput.addEventListener('input', validateEmail);
+
+    function validateEmail() {
+      const email = emailInput.value;
+
+      const existingErrorMessage = document.getElementById('error-message');
+      if (existingErrorMessage) {
+        existingErrorMessage.remove();
+      }
+
+      if (email === '') {
+        return;
+      }
+
+      if (!isValidEmail(email)) {
+        const errorMessage = document.createElement('div');
+        errorMessage.id = 'error-message';
+        errorMessage.className = 'error';
+        errorMessage.textContent = 'Invalid email address';
+
+        emailInput.insertAdjacentElement('afterend', errorMessage);
+      }
+    }
+
+    function isValidEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+
+    //live phone number validation
+    const phoneInput = document.getElementById('phone');
+
+    phoneInput.addEventListener('input', validatePhoneNumber);
+
+    function validatePhoneNumber() {
+      const phoneNumber = phoneInput.value;
+
+      const existingErrorMessage = document.getElementById('error-message');
+      if (existingErrorMessage) {
+        existingErrorMessage.remove();
+      }
+
+      if (phoneNumber === '') {
+        return;
+      }
+
+      if (!isValidPhoneNumber(phoneNumber)) {
+        const errorMessage = document.createElement('div');
+        errorMessage.id = 'error-message';
+        errorMessage.className = 'error';
+        errorMessage.textContent = 'Invalid phone number';
+
+        phoneInput.insertAdjacentElement('afterend', errorMessage);
+      }
+    }
+
+    function isValidPhoneNumber(phoneNumber) {
+      const phoneRegex = /^7[1-7][0-9]{6}$/;
+      return phoneRegex.test(phoneNumber);
+    }
 });

@@ -74,3 +74,10 @@ select{
     position: absolute;
     top: 100%;
 }
+
+#error-message {
+    color: red;
+    font-size: small;
+    position: absolute;
+    top: 100%;
+}
